@@ -11,6 +11,8 @@ Built with Laravel 11 + Eloquent ORM.
 **Run these commmands to setup the project**
 - Run `composer install`
 - Run `npm install`
+- Run `mv .env.example .env` and set `DB_*` vars properly
+- Run `php artisan key:generate`
 - Run `php artisan migrate` - It will run default migrations + project specific migrations
 - Run `php artisan storage:link`
 - Run `php artisan db:seed` - It will seed DB with 50 providers and 5 categories
