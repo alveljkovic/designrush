@@ -1,4 +1,4 @@
-# designrush
+# DesignRush
 Test assignment for DesignRush
 
 # Service Provider Directory (Laravel 11)
