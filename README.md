@@ -18,28 +18,25 @@ Built with Laravel 11 + Eloquent ORM.
 
 ## Design Decisions
 - **Laravel 11 + Eloquent**: Clean ORM for relationships.
-- **Blade SSR**: Fast TTFB, minimal JS required.
-- **Pagination**: Reduces payload and improves performance.
-- **Eager Loading**: Avoids N+1 queries when fetching categories.
+- **Inertia.js**: Connects Laravel and Vue directly, avoiding a separate API layer and reducing boilerplate.
+- **Vue 3**: Lightweight frontend framework with a strong reactivity system.
+- **Tailwind CSS**: Utility-first CSS framework that ensures consistent design and fast prototyping.
 
 ## Performance Optimizations
-- **Eager Loading**: All providers load with their categories.
-- **Pagination**: Only 20 items per request.
-- **Image Optimization**: Lazy loading, WebP/AVIF recommended.
-- **JS/CSS**: Defer JS, inline critical CSS for faster LCP.
-- **Caching**: Redis for provider listings and categories.
-- **DB Indexes**: On slug + category_id for fast lookups.
+- **Eager Loading**: Prevents N+1 issues by loading related data in fewer queries.
+- **Custom Pagination**: Implements pagination logic in memory without additional database queries.
+- **Image Optimization**: Lazy loading.
+- **JS/CSS**: Deferring JavaScript, lazy-loading components, and minimizing critical CSS.
+- **DB Indexes**: Speeds up lookups and filtering by adding indexes to key columns such as slug, name, and foreign keys.
 
 ## Future Enhancements
-- Full-text search (Elastic/Meilisearch).
-- Admin dashboard (Laravel Nova/Filament).
-- API endpoints with rate limiting.
-- Continuous performance monitoring with Lighthouse CI.
+- **Image Optimization**: Use WebP/AVIF for smaller, faster-loading images.
+- **Caching (Redis)**: Store frequently accessed queries in Redis to reduce DB load.
+- **Laravel Admin Area**: Add Nova or Filament for easier CRUD management.
+- **Full-text Search**: Use Elastic/Meilisearch for flexible search.
+- **Multi-Category Selection/Functionality**: Connect Providers with multiple categories, filter by mutliple categories.
+- **API (CRUD actions for Providers)**:  Expose providers via REST API to enable integrations and mobile apps.
 
 ## Testing
-- PHPUnit feature tests included.
+- PHPUnit unit tests included.
 - Run `php artisan test` to execute the suite.
-
-## Benchmarks
-- Before/after Lighthouse results should be documented.
-- Track LCP, CLS, and INP improvements over time.
